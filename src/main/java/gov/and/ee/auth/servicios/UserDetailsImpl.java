@@ -24,7 +24,7 @@ public class UserDetailsImpl implements UserDetailsService {
 	 @Autowired 
 	 AuthRepositorio auth;
 	 
-	 @Autowired
+	 @Autowired  
 	 RestTemplate restTemplate;
 
 	@Override
