@@ -27,12 +27,12 @@ public class UserDetailsImpl implements UserDetailsService {
 	 @Autowired
 	 RestTemplate restTemplate;
 
-	/*@Override
+	@Override
 	 public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		 User  usuario = auth.findByNombreUsuario(username);	
 		return UserAuthDetails.build(usuario);
-	 }*/
-	 
+	 }
+	/* 
 	 @Override
 	 public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		 MultiValueMap<String, String> parametersMap = new LinkedMultiValueMap<String, String>();
@@ -41,7 +41,7 @@ public class UserDetailsImpl implements UserDetailsService {
 		return UserAuthDetails.build(usuario);
 	 }
 	
-	
+	*/
 	
 
 }
