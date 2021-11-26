@@ -10,7 +10,7 @@ import org.springframework.security.core.authority.AuthorityUtils;
 
 import org.springframework.security.core.userdetails.UserDetails;
 
-import gov.and.ee.auth.model.User;
+import gov.and.ee.auth.entity.User;
 
 
 
@@ -27,10 +27,6 @@ public class UserAuthDetails implements UserDetails {
 	private String Correo;
 	private String Password;
 	private Collection<? extends GrantedAuthority> authorities;
-	
-	
-	
-
 	
 	public UserAuthDetails() {
 		
@@ -53,9 +49,9 @@ public class UserAuthDetails implements UserDetails {
 		
 		
 		return new UserAuthDetails(
-				usuario.getNombreUsuario()
-				,usuario.getPassword()
-				,usuario.getCorreo(),
+				usuario.getNombreusuario()
+				,usuario.getContrasenausuario()
+				,usuario.getCorreousuario(),
 				authorities);
 		    
     }

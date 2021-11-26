@@ -17,14 +17,14 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import gov.and.ee.auth.jwt.JwtEntryPoint;
 import gov.and.ee.auth.jwt.JwtTokenFilter;
-import gov.and.ee.auth.servicios.UserDetailsImpl;
+import gov.and.ee.auth.services.UserDetailsImpl;
 
 
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@EnableEurekaClient
+
 public class MainSecurity extends WebSecurityConfigurerAdapter{
 	
 		@Autowired
@@ -62,8 +62,8 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
 	    protected void configure(HttpSecurity http) throws Exception {
 	        http.cors().and().csrf().disable()
 	                .authorizeRequests()	                
-	                .antMatchers("/auth/**").permitAll()	
-	                .antMatchers("/usuarios/**").hasAnyRole("ROOT","ADMIN")
+	                .antMatchers("/auth/**").permitAll()	              
+	                .antMatchers("/USER-SERVICE/user/**").hasAnyRole("ROOT")
 	                .anyRequest().authenticated()
 	                .and()
 	                .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)

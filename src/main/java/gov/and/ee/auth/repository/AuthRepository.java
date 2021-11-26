@@ -5,19 +5,18 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import gov.and.ee.auth.model.User;
+import gov.and.ee.auth.entity.User;
 
 
 
 
 
 @Repository
-public interface AuthRepositorio extends JpaRepository<User, Integer>  {
+public interface AuthRepository extends JpaRepository<User, Integer>  {
 	//@Query("Select * from Usuarios  where NombreUsuario = :nombreUsuario")
-	public User findByNombreUsuario(String nombreUsuario);	
+	public User findByNombreusuario(String nombreUsuario);	
 	//@Query("Select * from Usuarios  where Correo = :correo")
-	User findByCorreo(@Param("correo")String correo);
-	
+	User findByCorreousuario(@Param("correo")String correo);
 	
 	
 	
